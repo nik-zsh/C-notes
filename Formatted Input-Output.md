@@ -40,3 +40,10 @@ for `printf("x = %-4d\n",x);` output will be `123⚪`
 
 
 2. **Precision (p)**: This has different effect for different data types.
+
+| Data Type      | Effect                                                                                                                                              |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `int` (`d`)    | Dictates the number of digits to display. Extra space is supplemented by zeros instead of spaces.                                                   |
+| `float`  (`e`) | `e` displays floating point number is expotential form. `p` dictates how many digits should appear after decimal point.<br>`printf("%.1e", 12.34);` |
+| `float` (`f`)  | `p` has same effect as mentioned in above                                                                                                           |
+| `float (g)`    | Displays a floating point number in either exponential format or fixed decimal format. `p` diplays **maximum number of significant digit**          |
