@@ -47,3 +47,27 @@ for `printf("x = %-4d\n",x);` output will be `123⚪`
 | `float`  (`e`) | `e` displays floating point number is expotential form. `p` dictates how many digits should appear after decimal point.<br>`printf("%.1e", 12.34);` |
 | `float` (`f`)  | `p` has same effect as mentioned in above                                                                                                           |
 | `float (g)`    | Displays a floating point number in either exponential format or fixed decimal format. `p` diplays **maximum number of significant digit**          |
+
+# Input
+
+Similar to `printf()` which prints in specified format, `scanf()` reads in particular format. 
+Similar to `printf()` its string may also contain ordinary characters and conversion specification. 
+
+```c
+int x,y;
+float i,j;
+scanf("%d%d%f%f",&x, &y, &i, &j );
+```
+
+>[!IMPORTANT]
+>Just like `printf()`, `scanf()` is not obligated to check number of format specifiers and agurments.
+
+let the input be: `1  -20  .3  -4.0e3` 
+`scanf()` will read the line and convert the chain of characters to meaningful data according to format specifiers. It will assign `1, -20, 0.3, -4000` to `x, y, i, j` respectively. 
+
+## How scanf actually works.
+
+`scanf()` is actually a "pattern-matching" function which tries to match up input string with conversion specifications. 
+It is also controlled by format string. For each conversion specification in format string, `scanf()` tries to look up appropriate type of input data, skipping blank spaces if needed. It continues **until it encounters a input which cannot possibly belong to format specification, then it stops then and there without looking rest of the format string.**
+
+As it searches the begining of a number, it ignores white space. 
