@@ -71,3 +71,5 @@ let the input be: `1  -20  .3  -4.0e3`
 It is also controlled by format string. For each conversion specification in format string, `scanf()` tries to look up appropriate type of input data, skipping blank spaces if needed. It continues **until it encounters a input which cannot possibly belong to format specification, then it stops then and there without looking rest of the format string.**
 
 As it searches the begining of a number, it ignores white space. 
+
+`scanf()` "peeks" at final character but does not read it.
